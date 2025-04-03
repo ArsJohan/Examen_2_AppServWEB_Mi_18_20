@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Data.Entity.Infrastructure;
+using Examen2.Clases;
 
 namespace Examen2.Clases
 {

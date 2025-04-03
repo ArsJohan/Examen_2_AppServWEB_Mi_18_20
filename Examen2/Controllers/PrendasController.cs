@@ -22,5 +22,13 @@ namespace Examen2.Controllers
 
             return upload.GrabarPrenda(idCliente, nombre, correo, celular);
         }
+
+        [HttpGet]
+        [Route("PrendasXCliente")]
+        public IQueryable ObtenerPrendasXCliente(string idCliente )
+        {
+            clsPrenda upload = new clsPrenda();
+            return upload.ObtenerPrendasXCliente(idCliente);
+        }
     }
 }

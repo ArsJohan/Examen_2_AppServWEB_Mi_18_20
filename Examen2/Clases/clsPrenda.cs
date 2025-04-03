@@ -36,6 +36,9 @@ namespace Examen2.Clases
         {
             try
             {
+                var ultimaPrenda = dbExamen.Prendas.OrderByDescending(p => p.IdPrenda).FirstOrDefault();
+
+                int nuevoCodigo = (ultimaPrenda != null) ? ultimaPrenda.IdPrenda + 1 : 1;
                 Cliente cliente = dbExamen.Clientes.FirstOrDefault(c => c.Documento == idCliente);
 
                 // Si el cliente no existe, se crea y guarda en la base de datos
@@ -53,6 +56,7 @@ namespace Examen2.Clases
                 }
 
                 // Se asocia la prenda al cliente y se guarda
+                prenda.IdPrenda = nuevoCodigo;
                 prenda.Cliente = cliente.Documento;
                 dbExamen.Prendas.Add(prenda);
                 dbExamen.SaveChanges();
@@ -69,11 +73,15 @@ namespace Examen2.Clases
         {
             try
             {
+                int nuevoId = dbExamen.FotoPrendas.Any()? dbExamen.FotoPrendas.Max(f => f.idFoto) + 1: 1; // Si no hay registros, empezamos desde 1
+
                 foreach (string imagen in fotoPrenda)
                 {
+      
                     FotoPrenda imagenP= new FotoPrenda();
                     imagenP.idPrenda = idPrenda;
                     imagenP.FotoPrenda1 = imagen;
+                    imagenP.idFoto = nuevoId++;
                     dbExamen.FotoPrendas.Add(imagenP);
                     dbExamen.SaveChanges();
                 }
@@ -83,6 +91,41 @@ namespace Examen2.Clases
             {
                 return "Error: " + ex.Message;
             }
+        }
+
+
+        public IQueryable ObtenerPrendasXCliente(string idCliente)
+        {
+
+            return from C in dbExamen.Set<Cliente>()
+                   join P in dbExamen.Set<Prenda>()
+                   on C.Documento equals P.Cliente
+                   join F in dbExamen.Set<FotoPrenda>()
+                   on P.IdPrenda equals F.idPrenda into imagenesPrenda
+                   where C.Documento == idCliente
+                   select new
+                   {
+                       Cliente = new
+                       {
+                           C.Documento,
+                           C.Nombre,
+                           C.Email,
+                           C.Celular,
+                       },
+                       Prendas = new
+                       {
+                           P.IdPrenda,
+                           P.Descripcion,
+                           P.TipoPrenda,
+                           P.Valor,
+                          
+                           Imagenes = imagenesPrenda.Select(img => new
+                           {
+                               img.idFoto,
+                               img.FotoPrenda1,
+                           }).ToList()
+                       }
+                   };
         }
     }
 }

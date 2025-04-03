@@ -9,6 +9,7 @@
 
 namespace Examen2.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -17,7 +18,8 @@ namespace Examen2.Models
         public int idFoto { get; set; }
         public string FotoPrenda1 { get; set; }
         public int idPrenda { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Prenda Prenda { get; set; }
     }
 }
