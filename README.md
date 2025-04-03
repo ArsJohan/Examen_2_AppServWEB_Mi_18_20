@@ -47,6 +47,13 @@ Solo debe tener un servicio para grabar la prenda, en este servicio deben ir los
                     <sub><b>Johan Esteban Arias Arboleda</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/SYeison">
+                    <img src="https://avatars.githubusercontent.com/u/187584546?v=4" width="100;" alt="SYeison"/>
+                    <br />
+                    <sub><b>Yeison Sanchez</b></sub>
+                </a>
+            </td>
 		</tr>
 	<tbody>
 </table>
