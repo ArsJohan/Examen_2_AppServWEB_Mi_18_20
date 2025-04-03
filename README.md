@@ -33,8 +33,7 @@ Solo debe tener un servicio para grabar la prenda, en este servicio deben ir los
 
 
 ## Video: Explicativo y Desmostrativo (Postman) 🟠
-[![Watch video](https://github.com/user-attachments/assets/653bce68-d004-47e9-bf64-015b9e4ecb20)
-](https://youtu.be/Y6u0Cd0Lsw0)
+
 
 ## Contribuidores 🫂
 <!-- readme: contributors -start -->
@@ -46,6 +45,13 @@ Solo debe tener un servicio para grabar la prenda, en este servicio deben ir los
                     <img src="https://avatars.githubusercontent.com/u/133719384?v=4" width="100;" alt="ArsJohan"/>
                     <br />
                     <sub><b>Johan Esteban Arias Arboleda</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/SYeison">
+                    <img src="https://avatars.githubusercontent.com/u/187584546?v=4" width="100;" alt="SYeison"/>
+                    <br />
+                    <sub><b>Yeison Sanchez</b></sub>
                 </a>
             </td>
 		</tr>
