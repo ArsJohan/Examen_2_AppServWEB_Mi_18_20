@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "e38f2777-4ef4-4c6d-8e0d-0a26e139a626",
+		"name": "REST API EXAMEN 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38469054"
+	},
+	"item": [
+		{
+			"name": "Prenda",
+			"item": [
+				{
+					"name": "AgregarPrenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"TipoPrenda\": \"Camisa\",\r\n    \"Descripcion\": \"Camisa Manga Larga\",\r\n    \"Valor\": 400000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_prenda}}?idCliente=1&nombre=Yeison&correo=yeison@example.com&celular=3204453324",
+							"host": [
+								"{{base_url_prenda}}"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								},
+								{
+									"key": "nombre",
+									"value": "Yeison"
+								},
+								{
+									"key": "correo",
+									"value": "yeison@example.com"
+								},
+								{
+									"key": "celular",
+									"value": "3204453324"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultarPrendaPorCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_prenda}}/PrendasXCliente?idCliente=1",
+							"host": [
+								"{{base_url_prenda}}"
+							],
+							"path": [
+								"PrendasXCliente"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Imagen",
+			"item": [
+				{
+					"name": "AgregarImagen",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/johan/Downloads/alicate.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_image}}/UploadFiles?Datos=2&Proceso=producto",
+							"host": [
+								"{{base_url_image}}"
+							],
+							"path": [
+								"UploadFiles"
+							],
+							"query": [
+								{
+									"key": "Datos",
+									"value": "2"
+								},
+								{
+									"key": "Proceso",
+									"value": "producto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarImagen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/C:/Users/johan/Downloads/alicate.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_image}}/UploadFiles?Datos=2&Proceso=producto",
+							"host": [
+								"{{base_url_image}}"
+							],
+							"path": [
+								"UploadFiles"
+							],
+							"query": [
+								{
+									"key": "Datos",
+									"value": "2"
+								},
+								{
+									"key": "Proceso",
+									"value": "producto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ElimnarImagen",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_image}}/UploadFiles?NombreArchivo=alicate.jpg&Proceso=trash",
+							"host": [
+								"{{base_url_image}}"
+							],
+							"path": [
+								"UploadFiles"
+							],
+							"query": [
+								{
+									"key": "NombreArchivo",
+									"value": "alicate.jpg"
+								},
+								{
+									"key": "Proceso",
+									"value": "trash"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_image",
+			"value": "http://localhost:50846/api/UploadFiles",
+			"type": "string"
+		},
+		{
+			"key": "base_url_prenda",
+			"value": "http://localhost:50846/api/Prenda",
+			"type": "string"
+		}
+	]
+}
