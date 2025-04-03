@@ -7,20 +7,6 @@ Realiado por:
 - [Descripción del Problema](#Descripción-del-Problema)
   
 	- [Se solicita](#Se-solicita)
-   
- - [Tablas](#Tablas)
-   
-	- [Vivienda](#Vivienda)
-
-	- [Agencia](#Agencia)
-
-	- [Cliente](#Cliente)
-
-	- [tipoVivienda](#tipoVivienda)
-
-	- [Venta](#Venta)
-
-- [Relaciones](#Relaciones)
 - [Diagrama](#diagrama-modelo-relacional)
 - [Video POSTMAN](#video-explicativo-y-desmostrativo-postman-)
 - [Contribuidores](#contribuidores-)
@@ -43,7 +29,7 @@ Solo debe tener un servicio para grabar la prenda, en este servicio deben ir los
 
   
 ## Diagrama (Modelo Relacional)📎
-![Modelo Relacional.png](https://github.com/ArsJohan/Examen_2_AppServWEB_Mi_18_20/blob/main/Modelo%20Relacional.png)
+![Modelo Relacional.png](https://github.com/ArsJohan/Examen_2_AppServWEB_Mi_18_20/blob/main/ModeloRelacional.png)
 
 
 ## Video: Explicativo y Desmostrativo (Postman) 🟠
