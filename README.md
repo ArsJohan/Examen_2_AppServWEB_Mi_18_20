@@ -33,8 +33,7 @@ Solo debe tener un servicio para grabar la prenda, en este servicio deben ir los
 
 
 ## Video: Explicativo y Desmostrativo (Postman) 🟠
-[![Watch video](https://github.com/user-attachments/assets/653bce68-d004-47e9-bf64-015b9e4ecb20)
-](https://youtu.be/Y6u0Cd0Lsw0)
+
 
 ## Contribuidores 🫂
 <!-- readme: contributors -start -->
